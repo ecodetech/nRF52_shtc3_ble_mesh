@@ -3,7 +3,7 @@
 
 ### Hardware used: Two nRF52840 development kits ###
 ### Mesh SDK: 4.0 ###
-###nRF5 SDK: 16.0 ###
+### nRF5 SDK: 16.0 ###
 
 Using simple onOff vendor model a model is created for SHTC3 sensor.
 
