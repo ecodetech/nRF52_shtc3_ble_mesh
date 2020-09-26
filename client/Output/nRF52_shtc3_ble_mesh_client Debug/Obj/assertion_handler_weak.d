@@ -1,5 +1,5 @@
 Output/nRF52_shtc3_ble_mesh_client\ Debug/Obj/assertion_handler_weak.o: \
- J:\Manoj\indiamtech\nRF52840_shtc3_mesh\nRF52_shtc3_ble_mesh\common\src\assertion_handler_weak.c \
+ H:\indiamtech\nRF52_shtc3_mesh\nRF52_shtc3_ble_mesh\common\src\assertion_handler_weak.c \
  C:/nRF5SDK160098a08e2/components/libraries/util/app_error.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stdio.h \

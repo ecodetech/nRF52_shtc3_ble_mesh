@@ -1,5 +1,5 @@
 Output/nRF52_shtc3_ble_mesh_server\ Debug/Obj/shtc3_drv.o: \
- J:\Manoj\indiamtech\nRF52840_shtc3_mesh\nRF52_shtc3_ble_mesh\server\shtc3\shtc3_drv.c \
+ H:\indiamtech\nRF52_shtc3_mesh\nRF52_shtc3_ble_mesh\server\shtc3\shtc3_drv.c \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stdbool.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stdint.h \
  C:/nRF5SDK160098a08e2/integration/nrfx/legacy/nrf_drv_twi.h \
@@ -58,4 +58,4 @@ Output/nRF52_shtc3_ble_mesh_server\ Debug/Obj/shtc3_drv.o: \
  C:/nRF5SDK160098a08e2/modules/nrfx/hal/nrf_twim.h \
  C:/nRF5SDK160098a08e2/modules/nrfx/drivers/include/nrfx_twi.h \
  C:/nRF5SDK160098a08e2/modules/nrfx/hal/nrf_twi.h \
- J:\Manoj\indiamtech\nRF52840_shtc3_mesh\nRF52_shtc3_ble_mesh\server\shtc3\shtc3_drv.h
+ H:\indiamtech\nRF52_shtc3_mesh\nRF52_shtc3_ble_mesh\server\shtc3\shtc3_drv.h

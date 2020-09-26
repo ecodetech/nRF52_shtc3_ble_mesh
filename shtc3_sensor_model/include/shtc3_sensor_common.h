@@ -68,6 +68,7 @@ typedef enum
 typedef struct __attribute((packed))
 {
     uint32_t temperature; /**< State to set. */
+    uint32_t humidity; /**< State to set. */
     uint8_t tid;    /**< Transaction number. */
 } shtc3_sensor_msg_set_t;
 
@@ -75,6 +76,7 @@ typedef struct __attribute((packed))
 typedef struct __attribute((packed))
 {
     uint32_t temperature; /**< State to set. */
+    uint32_t humidity; /**< State to set. */
     uint8_t tid;    /**< Transaction number. */
 } shtc3_sensor_msg_set_unreliable_t;
 
@@ -82,7 +84,7 @@ typedef struct __attribute((packed))
 typedef struct __attribute((packed))
 {
     uint32_t temperature; /**< Current state. */
-    
+    uint32_t humidity; /**< current humidity. */
 } shtc3_sensor_msg_status_t;
 
 /*lint -align_max(pop) */

@@ -25,6 +25,7 @@
 typedef struct
 {
     uint32_t temperature;
+    uint32_t humidity;
 } shtc3_sensor_status_t;
 
 /** Forward declaration. */
@@ -37,7 +38,7 @@ typedef struct __shtc3_sensor_client shtc3_sensor_client_t;
  * @param[in] status The received status of the remote server.
  * @param[in] src    Element address of the remote server.
  */
-typedef void (*shtc3_sensor_status_cb_t)(const shtc3_sensor_client_t * p_self, uint32_t status, uint16_t src);
+typedef void (*shtc3_sensor_status_cb_t)(const shtc3_sensor_client_t * p_self, shtc3_sensor_status_t status, uint16_t src);
 
 /**
  * Simple OnOff timeout callback type.
@@ -97,7 +98,7 @@ uint32_t shtc3_sensor_client_init(shtc3_sensor_client_t * p_client, uint16_t ele
  * @retval NRF_ERROR_INVALID_PARAM  Model not bound to appkey, publish address not set or wrong
  *                                  opcode format.
  */
-uint32_t shtc3_sensor_client_set(shtc3_sensor_client_t * p_client, uint32_t on_off);
+uint32_t shtc3_sensor_client_set(shtc3_sensor_client_t * p_client, shtc3_sensor_status_t status_val);
 
 /**
  * Sets the state of the Simple OnOff Server unreliably (without acknowledgment).
@@ -116,7 +117,7 @@ uint32_t shtc3_sensor_client_set(shtc3_sensor_client_t * p_client, uint32_t on_o
  * @retval NRF_ERROR_INVALID_PARAM  Model not bound to appkey, publish address not set or wrong
  *                                  opcode format.
  */
-uint32_t shtc3_sensor_client_set_unreliable(shtc3_sensor_client_t * p_client, uint32_t on_off, uint8_t repeats);
+uint32_t shtc3_sensor_client_set_unreliable(shtc3_sensor_client_t * p_client, shtc3_sensor_status_t status_val, uint8_t repeats);
 
 /**
  * Gets the state of the Simple OnOff server.

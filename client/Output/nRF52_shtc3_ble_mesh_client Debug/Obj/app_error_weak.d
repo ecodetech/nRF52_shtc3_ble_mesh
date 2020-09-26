@@ -1,5 +1,5 @@
 Output/nRF52_shtc3_ble_mesh_client\ Debug/Obj/app_error_weak.o: \
- J:\Manoj\indiamtech\nRF52840_shtc3_mesh\nRF52_shtc3_ble_mesh\common\src\app_error_weak.c \
+ H:\indiamtech\nRF52_shtc3_mesh\nRF52_shtc3_ble_mesh\common\src\app_error_weak.c \
  C:/nRF5SDK160098a08e2/modules/nrfx/mdk/nrf.h \
  C:/nRF5SDK160098a08e2/modules/nrfx/mdk/nrf52840.h \
  C:/nRF5SDK160098a08e2/components/toolchain/cmsis/include/core_cm4.h \

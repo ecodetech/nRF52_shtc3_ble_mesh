@@ -1,5 +1,5 @@
 Output/nRF52_shtc3_ble_mesh_client\ Debug/Obj/nrf_mesh_weak.o: \
- J:\Manoj\indiamtech\nRF52840_shtc3_mesh\nRF52_shtc3_ble_mesh\nrf_mesh_weak.c \
+ H:\indiamtech\nRF52_shtc3_mesh\nRF52_shtc3_ble_mesh\nrf_mesh_weak.c \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stdint.h \
  C:/nRF5SDK160098a08e2/components/softdevice/s140/headers/nrf_error.h \
  C:/NRF5_MESH_SDK_4_0/mesh/prov/api/nrf_mesh_prov.h \

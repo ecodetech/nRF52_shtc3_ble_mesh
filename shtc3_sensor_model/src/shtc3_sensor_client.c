@@ -38,10 +38,10 @@ shtc3_sensor_status_t stat;
             /* Ignore */
             break;
         case ACCESS_RELIABLE_TRANSFER_TIMEOUT:
-            p_client->status_cb(p_client, stat.temperature, NRF_MESH_ADDR_UNASSIGNED);
+            p_client->status_cb(p_client, stat, NRF_MESH_ADDR_UNASSIGNED);
             break;
         case ACCESS_RELIABLE_TRANSFER_CANCELLED:
-            p_client->status_cb(p_client, stat.temperature, NRF_MESH_ADDR_UNASSIGNED);
+            p_client->status_cb(p_client, stat, NRF_MESH_ADDR_UNASSIGNED);
             break;
         default:
             /* Should not be possible. */
@@ -79,15 +79,15 @@ static uint32_t send_reliable_message(const shtc3_sensor_client_t * p_client,
 static void handle_status_cb(access_model_handle_t handle, const access_message_rx_t * p_message, void * p_args)
 {
     shtc3_sensor_client_t * p_client = p_args;
-    shtc3_sensor_status_t tempval ={0};
     NRF_MESH_ASSERT(p_client->status_cb != NULL);
-
     shtc3_sensor_msg_status_t * p_status =
         (shtc3_sensor_msg_status_t *) p_message->p_data;
     
-   
-    tempval.temperature =  (p_status->temperature );
-    p_client->status_cb(p_client, tempval.temperature, p_message->meta_data.src.value);
+    shtc3_sensor_status_t stat;
+    stat.temperature = p_status->temperature;
+    stat.humidity = p_status->humidity;
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "GET completed RSSI: %ddB\n", p_message->meta_data.p_core_metadata->params.scanner.rssi);
+    p_client->status_cb(p_client, stat, p_message->meta_data.src.value);
 }
 
 static const access_opcode_handler_t m_opcode_handlers[] =
@@ -129,7 +129,7 @@ uint32_t shtc3_sensor_client_init(shtc3_sensor_client_t * p_client, uint16_t ele
 
 }
 
-uint32_t shtc3_sensor_client_set(shtc3_sensor_client_t * p_client, uint32_t on_off)
+uint32_t shtc3_sensor_client_set(shtc3_sensor_client_t * p_client, shtc3_sensor_status_t status_val)
 {
     if (p_client == NULL || p_client->status_cb == NULL)
     {
@@ -140,7 +140,8 @@ uint32_t shtc3_sensor_client_set(shtc3_sensor_client_t * p_client, uint32_t on_o
         return NRF_ERROR_INVALID_STATE;
     }
 
-    p_client->state.data.temperature = on_off ;
+    p_client->state.data.temperature = status_val.temperature ;
+    p_client->state.data.humidity = status_val.humidity ;
     p_client->state.data.tid = m_tid++;
 
     uint32_t status = send_reliable_message(p_client,
@@ -154,10 +155,11 @@ uint32_t shtc3_sensor_client_set(shtc3_sensor_client_t * p_client, uint32_t on_o
     return status;
 }
 
-uint32_t shtc3_sensor_client_set_unreliable(shtc3_sensor_client_t * p_client, uint32_t on_off, uint8_t repeats)
+uint32_t shtc3_sensor_client_set_unreliable(shtc3_sensor_client_t * p_client, shtc3_sensor_status_t status_val, uint8_t repeats)
 {
     shtc3_sensor_msg_set_unreliable_t set_unreliable;
-    set_unreliable.temperature = on_off;
+    set_unreliable.temperature = status_val.temperature;
+    set_unreliable.humidity = status_val.humidity;
     set_unreliable.tid = m_tid++;
 
     access_message_tx_t message;

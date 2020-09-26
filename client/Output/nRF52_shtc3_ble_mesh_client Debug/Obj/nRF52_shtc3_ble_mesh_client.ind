@@ -114,6 +114,7 @@
 "Output/nRF52_shtc3_ble_mesh_client Debug/Obj/model_common.o"
 "Output/nRF52_shtc3_ble_mesh_client Debug/Obj/app_timer_mesh.o"
 "Output/nRF52_shtc3_ble_mesh_client Debug/Obj/shtc3_sensor_client.o"
+"Output/nRF52_shtc3_ble_mesh_client Debug/Obj/rssi_client.o"
 "C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 4.52b/lib/libdebugio_mempoll_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
 "C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 4.52b/lib/libm_v7em_fpv4_sp_d16_hard_t_le_eabi.a"
 "C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 4.52b/lib/libc_v7em_fpv4_sp_d16_hard_t_le_eabi.a"

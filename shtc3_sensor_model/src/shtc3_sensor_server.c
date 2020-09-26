@@ -14,15 +14,13 @@
 
 static void reply_status(const shtc3_sensor_server_t * p_server,
                          const access_message_rx_t * p_message,
-                         uint32_t present_on_off)
+                         const shtc3_sensor_msg_status_t status_val )
 {
-    shtc3_sensor_msg_status_t status;
-    status.temperature = present_on_off;
     access_message_tx_t reply;
     reply.opcode.opcode = SHTC3_SENSOR_OPCODE_STATUS;
     reply.opcode.company_id = SHTC3_SENSOR_COMPANY_ID;
-    reply.p_buffer = (const uint8_t *) &status;
-    reply.length = sizeof(status);
+    reply.p_buffer = (const uint8_t *) &status_val;
+    reply.length = sizeof(status_val);
     reply.force_segmented = false;
     reply.transmic_size = NRF_MESH_TRANSMIC_SIZE_DEFAULT;
     reply.access_token = nrf_mesh_unique_token_get();
@@ -39,16 +37,19 @@ static void handle_set_cb(access_model_handle_t handle, const access_message_rx_
     shtc3_sensor_server_t * p_server = p_args;
     NRF_MESH_ASSERT(p_server->set_cb != NULL);
 
-    uint32_t value = (((shtc3_sensor_msg_set_t*) p_message->p_data)->temperature) ;
-    value = p_server->set_cb(p_server, value);
-    reply_status(p_server, p_message, value);
-    (void) shtc3_sensor_server_status_publish(p_server, value); /* We don't care about status */
+    shtc3_sensor_msg_status_t status_val;
+    status_val.temperature = (((shtc3_sensor_msg_set_t*) p_message->p_data)->temperature);
+    status_val.humidity = (((shtc3_sensor_msg_set_t*) p_message->p_data)->humidity);
+    status_val = p_server->set_cb(p_server, status_val);
+    reply_status(p_server, p_message, status_val);
+    (void) shtc3_sensor_server_status_publish(p_server, status_val); /* We don't care about status */
 }
 
 static void handle_get_cb(access_model_handle_t handle, const access_message_rx_t * p_message, void * p_args)
 {
     shtc3_sensor_server_t * p_server = p_args;
     NRF_MESH_ASSERT(p_server->get_cb != NULL);
+    __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "GET Request received RSSI: %ddB\n", p_message->meta_data.p_core_metadata->params.scanner.rssi);
     reply_status(p_server, p_message, p_server->get_cb(p_server));
 }
 
@@ -56,9 +57,11 @@ static void handle_set_unreliable_cb(access_model_handle_t handle, const access_
 {
     shtc3_sensor_server_t * p_server = p_args;
     NRF_MESH_ASSERT(p_server->set_cb != NULL);
-    uint32_t value = (((shtc3_sensor_msg_set_unreliable_t*) p_message->p_data)->temperature);
-    value = p_server->set_cb(p_server, value);
-    (void) shtc3_sensor_server_status_publish(p_server, value);
+    shtc3_sensor_msg_status_t status_val;
+     status_val.temperature = (((shtc3_sensor_msg_set_unreliable_t*) p_message->p_data)->temperature);
+     status_val.humidity = (((shtc3_sensor_msg_set_unreliable_t*) p_message->p_data)->humidity);
+    status_val = p_server->set_cb(p_server, status_val);
+    (void) shtc3_sensor_server_status_publish(p_server, status_val);
 }
 
 static const access_opcode_handler_t m_opcode_handlers[] =
@@ -99,15 +102,14 @@ uint32_t shtc3_sensor_server_init(shtc3_sensor_server_t * p_server, uint16_t ele
     return access_model_add(&init_params, &p_server->model_handle);
 }
 
-uint32_t shtc3_sensor_server_status_publish(shtc3_sensor_server_t * p_server, uint32_t value)
+uint32_t shtc3_sensor_server_status_publish(shtc3_sensor_server_t * p_server, shtc3_sensor_msg_status_t status_val)
 {
-    shtc3_sensor_msg_status_t status;
-    status.temperature = value ;
+   
     access_message_tx_t msg;
     msg.opcode.opcode = SHTC3_SENSOR_OPCODE_STATUS;
     msg.opcode.company_id = SHTC3_SENSOR_COMPANY_ID;
-    msg.p_buffer = (const uint8_t *) &status;
-    msg.length = sizeof(status);
+    msg.p_buffer = (const uint8_t *) &status_val;
+    msg.length = sizeof(status_val);
     msg.force_segmented = false;
     msg.transmic_size = NRF_MESH_TRANSMIC_SIZE_DEFAULT;
     msg.access_token = nrf_mesh_unique_token_get();

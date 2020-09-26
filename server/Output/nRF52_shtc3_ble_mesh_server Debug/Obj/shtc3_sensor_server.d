@@ -1,5 +1,5 @@
 Output/nRF52_shtc3_ble_mesh_server\ Debug/Obj/shtc3_sensor_server.o: \
- J:\Manoj\indiamtech\nRF52840_shtc3_mesh\nRF52_shtc3_ble_mesh\shtc3_sensor_model\src\shtc3_sensor_server.c \
+ H:\indiamtech\nRF52_shtc3_mesh\nRF52_shtc3_ble_mesh\shtc3_sensor_model\src\shtc3_sensor_server.c \
  ../shtc3_sensor_model/include/shtc3_sensor_server.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stdbool.h \
@@ -41,6 +41,7 @@ Output/nRF52_shtc3_ble_mesh_server\ Debug/Obj/shtc3_sensor_server.o: \
  C:/nRF5SDK160098a08e2/components/softdevice/s140/headers/nrf_soc.h \
  C:/nRF5SDK160098a08e2/components/softdevice/s140/headers/nrf_error_soc.h \
  C:/NRF5_MESH_SDK_4_0/mesh/core/include/toolchain.h \
+ ../shtc3_sensor_model/include/shtc3_sensor_common.h \
  ../shtc3_sensor_model/include/shtc3_sensor_common.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stddef.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/__crossworks.h \

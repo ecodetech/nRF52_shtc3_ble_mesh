@@ -80,7 +80,7 @@
  * @note To fit the configuration and health models, this value must equal at least
  * the number of models needed by the application plus two.
  */
-#define ACCESS_MODEL_COUNT (4) //+1 increment for shtc3
+#define ACCESS_MODEL_COUNT (4+1) //+1 increment for shtc3+rssi
 
 /**
  * The number of elements in the application.
@@ -88,7 +88,7 @@
  * @warning If the application is to support _multiple instances_ of the _same_ model, these instances
  * cannot be in the same element and a separate element is needed for each new instance of the same model.
  */
-#define ACCESS_ELEMENT_COUNT (2) //+1 increment for shtc3
+#define ACCESS_ELEMENT_COUNT (2+1) //+1 increment for shtc3+rssi
 
 /**
  * The number of allocated subscription lists for the application.

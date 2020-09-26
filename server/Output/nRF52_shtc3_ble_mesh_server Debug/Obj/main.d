@@ -1,5 +1,5 @@
 Output/nRF52_shtc3_ble_mesh_server\ Debug/Obj/main.o: \
- J:\Manoj\indiamtech\nRF52840_shtc3_mesh\nRF52_shtc3_ble_mesh\server\src\main.c \
+ H:\indiamtech\nRF52_shtc3_mesh\nRF52_shtc3_ble_mesh\server\src\main.c \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/string.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/__crossworks.h \
@@ -127,6 +127,7 @@ Output/nRF52_shtc3_ble_mesh_server\ Debug/Obj/main.o: \
  C:/NRF5_MESH_SDK_4_0/mesh/core/include/utils.h \
  C:/NRF5_MESH_SDK_4_0/mesh/core/include/timer_scheduler.h \
  ../shtc3_sensor_model/include/shtc3_sensor_server.h \
+ ../shtc3_sensor_model/include/shtc3_sensor_common.h \
  C:/NRF5_MESH_SDK_4_0/mesh/core/include/log.h \
  ../common/include/rtt_input.h include/app_config.h \
  ../common/include/app_onoff.h ../common/include/ble_softdevice_support.h \

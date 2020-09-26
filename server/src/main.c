@@ -37,14 +37,14 @@
 #include "nrf_mesh_config_examples.h"
 
 /* shtc3 driver includes and init*/
-#include "shtc3_drv.h"
 #include "app_timer.h"
+#include "shtc3_drv.h"
 
 #define ONOFF_SERVER_0_LED (BSP_LED_0)
 #define APP_ONOFF_ELEMENT_INDEX (0)
 
 /* TWI instance ID. */
-#define TWI_INSTANCE_ID     0
+#define TWI_INSTANCE_ID 0
 APP_TIMER_DEF(m_temp_timer_id); /**< Handler for repeated timer used to measure temp. */
 /* Indicates if operation on TWI has ended. */
 static volatile bool m_xfer_done = false;
@@ -53,40 +53,35 @@ static const nrf_drv_twi_t m_twi = NRF_DRV_TWI_INSTANCE(TWI_INSTANCE_ID);
 /**
  * @brief TWI events handler.
  */
-void twi_handler(nrf_drv_twi_evt_t const * p_event, void * p_context)
-{
-    switch (p_event->type)
-    {
-        case NRF_DRV_TWI_EVT_DONE:
-            if (p_event->xfer_desc.type == NRF_DRV_TWI_XFER_RX)
-            {
-                //data_handler(SHTC3_RawTemp());
-            }
-            m_xfer_done = true;
-            break;
-        default:
-            break;
+void twi_handler(nrf_drv_twi_evt_t const *p_event, void *p_context) {
+  switch (p_event->type) {
+  case NRF_DRV_TWI_EVT_DONE:
+    if (p_event->xfer_desc.type == NRF_DRV_TWI_XFER_RX) {
+      //data_handler(SHTC3_RawTemp());
     }
+    m_xfer_done = true;
+    break;
+  default:
+    break;
+  }
 }
 /**
  * @brief twi initialization.
  */
-void twi_init (void)
-{
-    ret_code_t err_code;
+void twi_init(void) {
+  ret_code_t err_code;
 
-    const nrf_drv_twi_config_t twi_shtc3_config = {
-       .scl                = ARDUINO_SCL_PIN,
-       .sda                = ARDUINO_SDA_PIN,
-       .frequency          = NRF_DRV_TWI_FREQ_100K,
-       .interrupt_priority = APP_IRQ_PRIORITY_HIGH,
-       .clear_bus_init     = false
-    };
+  const nrf_drv_twi_config_t twi_shtc3_config = {
+      .scl = ARDUINO_SCL_PIN,
+      .sda = ARDUINO_SDA_PIN,
+      .frequency = NRF_DRV_TWI_FREQ_100K,
+      .interrupt_priority = APP_IRQ_PRIORITY_HIGH,
+      .clear_bus_init = false};
 
-    err_code = nrf_drv_twi_init(&m_twi, &twi_shtc3_config, twi_handler, NULL);
-    APP_ERROR_CHECK(err_code);
+  err_code = nrf_drv_twi_init(&m_twi, &twi_shtc3_config, twi_handler, NULL);
+  APP_ERROR_CHECK(err_code);
 
-    nrf_drv_twi_enable(&m_twi);
+  nrf_drv_twi_enable(&m_twi);
 }
 /* state machine for temperature read
 */
@@ -141,7 +136,7 @@ static void temp_sensor_process(void) {
 
 static void temp_read_timeout_handler() {
   // start read process again
-  temp_sensor_process();  
+  temp_sensor_process();
 }
 /**@brief Function for starting timers.
  */
@@ -167,11 +162,9 @@ static void timers_init(void) {
   APP_ERROR_CHECK(err_code);
 }
 
-
 static void temp_sensor_init() {
   SHTC3_init(&m_twi); //setup instance
 }
-
 
 static bool m_device_provisioned;
 
@@ -185,21 +178,22 @@ APP_ONOFF_SERVER_DEF(m_onoff_server_0,
     APP_CONFIG_MIC_SIZE,
     app_onoff_server_set_cb,
     app_onoff_server_get_cb)
-
 /* shtc3 model vars*/
 static shtc3_sensor_server_t m_shtc3_server;
 
-
-static uint32_t shtc3_server_get_cb(const shtc3_sensor_server_t *p_server) {
-  uint32_t temp = SHTC3_TempDegC();
-  
-  __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Getting value of sensor: 0x%08x\n", temp);
+static shtc3_sensor_msg_status_t shtc3_server_get_cb(const shtc3_sensor_server_t *p_server) {
+  shtc3_sensor_msg_status_t status_val;
+  status_val.temperature =  (uint32_t) SHTC3_TempDegC();
+  status_val.humidity = (uint32_t)SHTC3_RelHumidPercent();
+  __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Getting temp of sensor: 0x%08x\n", status_val.temperature);
+  __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Getting humidity of sensor: %f\n", status_val.humidity);
   // add code here
-  return temp;
+  
+  return status_val;
 }
 
-static uint32_t shtc3_server_set_cb(const shtc3_sensor_server_t *p_server, uint32_t value) {
-__LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Setting value of sensor:0x%04x\n", value);
+static shtc3_sensor_msg_status_t shtc3_server_set_cb(const shtc3_sensor_server_t *p_server, shtc3_sensor_msg_status_t value) {
+  __LOG(LOG_SRC_APP, LOG_LEVEL_INFO, "Setting value of sensor:0x%04x\n", value.temperature);
   return value;
 }
 
@@ -391,12 +385,12 @@ static void start(void) {
 }
 
 int main(void) {
-twi_init(); //START I2C interface
+  twi_init(); //START I2C interface
   temp_sensor_init();
   timers_init();
   initialize();
   start();
-application_timers_start();
+  application_timers_start();
   for (;;) {
     (void)sd_app_evt_wait();
   }

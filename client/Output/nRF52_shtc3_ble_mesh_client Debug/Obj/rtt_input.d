@@ -1,5 +1,5 @@
 Output/nRF52_shtc3_ble_mesh_client\ Debug/Obj/rtt_input.o: \
- J:\Manoj\indiamtech\nRF52840_shtc3_mesh\nRF52_shtc3_ble_mesh\common\src\rtt_input.c \
+ H:\indiamtech\nRF52_shtc3_mesh\nRF52_shtc3_ble_mesh\common\src\rtt_input.c \
  ../common/include/rtt_input.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stdint.h \
  ../common/include/nrf_mesh_config_examples.h \

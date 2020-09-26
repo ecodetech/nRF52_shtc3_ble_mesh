@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "access.h"
+#include "shtc3_sensor_common.h"
 
 /**
  * @defgroup SHTC3_SENSOR_SERVER shtc3 sensor Server
@@ -24,7 +25,7 @@ typedef struct __shtc3_sensor_server shtc3_sensor_server_t;
  * @param[in] p_self Pointer to the shtc3 sensor Server context structure.
  * @returns @c true if the state is On, @c false otherwise.
  */
-typedef uint32_t (*shtc3_sensor_get_cb_t)(const shtc3_sensor_server_t * p_self);
+typedef shtc3_sensor_msg_status_t (*shtc3_sensor_get_cb_t)(const shtc3_sensor_server_t * p_self);
 
 /**
  * Set callback type.
@@ -32,7 +33,7 @@ typedef uint32_t (*shtc3_sensor_get_cb_t)(const shtc3_sensor_server_t * p_self);
  * @param[in] on_off Desired state
  * @returns @c true if the current state is On, @c false otherwise.
  */
-typedef uint32_t (*shtc3_sensor_set_cb_t)(const shtc3_sensor_server_t * p_self, uint32_t val);
+typedef shtc3_sensor_msg_status_t (*shtc3_sensor_set_cb_t)(const shtc3_sensor_server_t * p_self, shtc3_sensor_msg_status_t status_val);
 
 /** shtc3 sensor Server state structure. */
 struct __shtc3_sensor_server
@@ -82,7 +83,7 @@ uint32_t shtc3_sensor_server_init(shtc3_sensor_server_t * p_server, uint16_t ele
  * @retval NRF_ERROR_INVALID_LENGTH Attempted to send message larger than @ref ACCESS_MESSAGE_LENGTH_MAX.
  *
  */
-uint32_t shtc3_sensor_server_status_publish(shtc3_sensor_server_t * p_server, uint32_t value);
+uint32_t shtc3_sensor_server_status_publish(shtc3_sensor_server_t * p_server, shtc3_sensor_msg_status_t status_val);
 
 /** @} end of SHTC3_SENSOR_SERVER */
 

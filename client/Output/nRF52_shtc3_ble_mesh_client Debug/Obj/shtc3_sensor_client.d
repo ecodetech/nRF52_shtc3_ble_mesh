@@ -1,5 +1,5 @@
 Output/nRF52_shtc3_ble_mesh_client\ Debug/Obj/shtc3_sensor_client.o: \
- J:\Manoj\indiamtech\nRF52840_shtc3_mesh\nRF52_shtc3_ble_mesh\shtc3_sensor_model\src\shtc3_sensor_client.c \
+ H:\indiamtech\nRF52_shtc3_mesh\nRF52_shtc3_ble_mesh\shtc3_sensor_model\src\shtc3_sensor_client.c \
  ../shtc3_sensor_model/include/shtc3_sensor_client.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stdint.h \
  C:/NRF5_MESH_SDK_4_0/mesh/access/api/access.h \

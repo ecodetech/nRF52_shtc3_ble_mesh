@@ -1,5 +1,5 @@
 Output/nRF52_shtc3_ble_mesh_server\ Debug/Obj/app_onoff.o: \
- J:\Manoj\indiamtech\nRF52840_shtc3_mesh\nRF52_shtc3_ble_mesh\common\src\app_onoff.c \
+ H:\indiamtech\nRF52_shtc3_mesh\nRF52_shtc3_ble_mesh\common\src\app_onoff.c \
  ../common/include/app_onoff.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.52b/include/stdint.h \
  C:/NRF5_MESH_SDK_4_0/models/model_spec/generic_onoff/include/generic_onoff_server.h \

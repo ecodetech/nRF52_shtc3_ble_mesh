@@ -1,0 +1,48 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="Breakpoints" active_group="Breakpoints"/>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="nRF52_shtc3_ble_mesh_client_pca0059"/>
+  <ProjectSessionItem path="nRF52_shtc3_ble_mesh_client_pca0059;nRF52_shtc3_ble_mesh_client_pca0059"/>
+  <ProjectSessionItem path="nRF52_shtc3_ble_mesh_client_pca0059;nRF52_shtc3_ble_mesh_client_pca0059;Application"/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="72" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="main.c" selected="0" top="60" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="170" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../common/src/simple_hal.c" selected="0" top="155" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" openedFrom="H:/indiamtech/nRF52_shtc3_mesh/nRF52_shtc3_ble_mesh/client_pca0059/main.c" useBinaryEdit="0" left="0" path="C:/nRF5SDK160098a08e2/components/libraries/timer/app_timer.h" selected="0" top="24" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="49" useTextEdit="1" openedFrom="H:/indiamtech/nRF52_shtc3_mesh/nRF52_shtc3_ble_mesh/client_pca0059/main.c" useBinaryEdit="0" left="0" path="C:/nRF5SDK160098a08e2/components/boards/boards.h" selected="0" top="48" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="63" useTextEdit="1" openedFrom="C:/nRF5SDK160098a08e2/components/boards/boards.h" useBinaryEdit="0" left="0" path="C:/nRF5SDK160098a08e2/components/boards/pca10059.h" selected="1" top="48" codecName="Default"/>
+ </Files>
+ <ARMCrossStudioWindow activeProject="nRF52_shtc3_ble_mesh_client_pca0059" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+</session>

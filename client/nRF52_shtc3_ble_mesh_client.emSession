@@ -26,7 +26,8 @@
   <ProjectSessionItem path="nRF52_shtc3_ble_mesh_client;nRF52_shtc3_ble_mesh_client;Application"/>
   <ProjectSessionItem path="nRF52_shtc3_ble_mesh_client;nRF52_shtc3_ble_mesh_client;Generic OnOff Model"/>
   <ProjectSessionItem path="nRF52_shtc3_ble_mesh_client;nRF52_shtc3_ble_mesh_client;Mesh stack"/>
-  <ProjectSessionItem path="nRF52_shtc3_ble_mesh_client;nRF52_shtc3_ble_mesh_client;SEGGER RTT"/>
+  <ProjectSessionItem path="nRF52_shtc3_ble_mesh_client;nRF52_shtc3_ble_mesh_client;Other"/>
+  <ProjectSessionItem path="nRF52_shtc3_ble_mesh_client;nRF52_shtc3_ble_mesh_client;RSSI model"/>
   <ProjectSessionItem path="nRF52_shtc3_ble_mesh_client;nRF52_shtc3_ble_mesh_client;SHTC3 Model"/>
   <ProjectSessionItem path="nRF52_shtc3_ble_mesh_client;nRF52_shtc3_ble_mesh_client;Toolchain"/>
  </Project>
@@ -61,15 +62,15 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="15" y="419" useTextEdit="1" openedFrom="J:/Manoj/indiamtech/nRF52840_shtc3_mesh/nRF52_shtc3_ble_mesh/shtc3_sensor_model/src/shtc3_sensor_client.c" useBinaryEdit="0" left="0" path="main.c" selected="1" top="413" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="87" y="89" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../shtc3_sensor_model/src/shtc3_sensor_client.c" selected="0" top="69" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="118" useTextEdit="1" openedFrom="J:/Manoj/indiamtech/nRF52840_shtc3_mesh/nRF52_shtc3_ble_mesh/shtc3_sensor_model/src/shtc3_sensor_client.c" useBinaryEdit="0" left="0" path="../shtc3_sensor_model/include/shtc3_sensor_client.h" selected="0" top="104" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="81" useTextEdit="1" openedFrom="J:/Manoj/indiamtech/nRF52840_shtc3_mesh/nRF52_shtc3_ble_mesh/shtc3_sensor_model/src/shtc3_sensor_client.c" useBinaryEdit="0" left="0" path="../shtc3_sensor_model/include/shtc3_sensor_common.h" selected="0" top="78" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="82" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="C:/NRF5_MESH_SDK_4_0/models/model_spec/generic_onoff/src/generic_onoff_client.c" selected="0" top="69" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="86" useTextEdit="1" openedFrom="C:/NRF5_MESH_SDK_4_0/models/model_spec/generic_onoff/src/generic_onoff_client.c" useBinaryEdit="0" left="0" path="C:/NRF5_MESH_SDK_4_0/models/model_spec/generic_onoff/include/generic_onoff_messages.h" selected="0" top="57" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="96" useTextEdit="1" openedFrom="C:/NRF5_MESH_SDK_4_0/models/model_spec/generic_onoff/src/generic_onoff_client.c" useBinaryEdit="0" left="0" path="C:/NRF5_MESH_SDK_4_0/models/model_spec/generic_onoff/include/generic_onoff_client.h" selected="0" top="94" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="122" useTextEdit="1" openedFrom="J:/Manoj/indiamtech/nRF52840_shtc3_mesh/nRF52_shtc3_ble_mesh/shtc3_sensor_model/src/shtc3_sensor_client.c" useBinaryEdit="0" left="0" path="C:/NRF5_MESH_SDK_4_0/mesh/core/include/log.h" selected="0" top="103" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="331" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="C:/Program Files/SEGGER/SEGGER Embedded Studio for ARM 4.52b/source/thumb_crt0.s" selected="0" top="324" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="16" y="387" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="main.c" selected="1" top="381" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="96" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="include/nrf_mesh_config_app.h" selected="0" top="87" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="28" useTextEdit="1" openedFrom="H:/indiamtech/nRF52_shtc3_mesh/nRF52_shtc3_ble_mesh/shtc3_sensor_model/src/shtc3_sensor_client.c" useBinaryEdit="0" left="0" path="../shtc3_sensor_model/include/shtc3_sensor_client.h" selected="0" top="12" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="55" useTextEdit="1" openedFrom="H:/indiamtech/nRF52_shtc3_mesh/nRF52_shtc3_ble_mesh/client/main.c" useBinaryEdit="0" left="0" path="C:/NRF5_MESH_SDK_4_0/models/vendor/rssi_monitor/include/rssi_client.h" selected="0" top="55" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="63" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="C:/NRF5_MESH_SDK_4_0/models/vendor/rssi_monitor/src/rssi_client.c" selected="0" top="49" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="67" useTextEdit="1" openedFrom="C:/NRF5_MESH_SDK_4_0/models/vendor/rssi_monitor/src/rssi_client.c" useBinaryEdit="0" left="0" path="C:/NRF5_MESH_SDK_4_0/models/vendor/rssi_monitor/include/rssi_common.h" selected="0" top="57" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="64" y="88" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../shtc3_sensor_model/src/shtc3_sensor_client.c" selected="0" top="69" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="161" useTextEdit="1" openedFrom="H:/indiamtech/nRF52_shtc3_mesh/nRF52_shtc3_ble_mesh/shtc3_sensor_model/include/shtc3_sensor_client.h" useBinaryEdit="0" left="0" path="C:/NRF5_MESH_SDK_4_0/mesh/access/api/access.h" selected="0" top="142" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="109" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="include/sdk_config.h" selected="0" top="90" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="nRF52_shtc3_ble_mesh_client" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="J:/Manoj/indiamtech/nRF52840_shtc3_mesh/nRF52_shtc3_ble_mesh/client/include" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <ARMCrossStudioWindow activeProject="nRF52_shtc3_ble_mesh_client" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/NRF5_MESH_SDK_4_0/models/vendor/rssi_monitor/src" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
