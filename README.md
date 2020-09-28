@@ -13,3 +13,10 @@ Another is flashed with Client firmware.
 On server side shtc3 value is read per second
 
 Client reads server status periodically and receives values
+
+
+### Setup Segger Studio Environment
+1. Open Segger Embedded Studio we installed.
+2. Go to Tab **Tools->Building**, under **Build** look for **Global Macros**, insert the nRF5 SDK address to assign a variable to it. e.g.(*SDK_ROOT=C:/nRF5_SDK_16.0*)
+3. Also add global macro for nRF5 Mesh SDK. e.g.(*NRF52_MESH=C:/nRF5_Mesh_4.0*)
+4. Now we can use this variable globally in our projects.
